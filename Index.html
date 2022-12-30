@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otp Program</title>
+</head>
+<body>
+    <h1>Form Handling by otp</h1>
+
+    <form action="Result.html"  onSubmit ="getvalues()">
+
+
+        <input type="text" name="Fname" id="Fname" placeholder="enter here">
+        <input type="text" name="Lname" id="Lname" placeholder="enter here">
+
+
+
+
+        <input type="submit" value="send">
+
+    </form>
+
+
+    <script>
+
+         function getvalues() {
+
+            const Fname = document.getElementById('Fname').value;
+            const Lname = document.getElementById('Lname').value;
+            const otp = Math.round(Math.random() * 10000);
+            // sessionStorage.setItem('originalOtp', Otp)
+            sessionStorage.setItem('originalOtp', otp)
+
+          
+
+            sessionStorage.setItem('Firstname', Fname);
+            sessionStorage.setItem('Lastname', Lname);
+            sessionStorage.setItem('pass', otp);
+
+         }
+
+    </script>
+   
+</body>
+</html>

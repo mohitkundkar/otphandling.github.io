@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+</head>
+<body>
+    <h1>First name is : <span id="Fname"></span></h1>
+    <h1>Last name is : <span id="Lname"></span></h1>
+
+
+    <form onSubmit = "checkOTP()">
+
+        <input type="number" name="newOtp" id="newOtp" placeholder="enter otp here" >
+        <input type="submit" value="submit">
+
+
+    </form>
+
+
+    <script>
+
+        document.getElementById("Fname").innerHTML= sessionStorage.getItem("Firstname")
+        document.getElementById("Lname").innerHTML= sessionStorage.getItem("Lastname")
+        
+
+        const originalOtp = sessionStorage.getItem('originalOtp');
+        alert (originalOtp)
+
+
+        function checkOTP() {
+
+            const userOtp = document.getElementById('newOtp').value
+
+            if( originalOtp == userOtp )
+            {
+                alert("succesfull")
+
+            }
+            else{
+
+                alert("Faild")
+            }
+
+        }
+
+    </script>
+
+    
+</body>
+</html>
+
+
